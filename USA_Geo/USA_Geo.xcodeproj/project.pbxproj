@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		133A9B831ECA59DE009B7DB0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A9B821ECA59DE009B7DB0 /* APIManager.swift */; };
 		1355861A1EC50AF300436A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135586191EC50AF300436A85 /* AppDelegate.swift */; };
 		1355861C1EC50AF300436A85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1355861B1EC50AF300436A85 /* ViewController.swift */; };
 		1355861F1EC50AF300436A85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1355861D1EC50AF300436A85 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		133A9B821ECA59DE009B7DB0 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		135586161EC50AF300436A85 /* USA_Geo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USA_Geo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		135586191EC50AF300436A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1355861B1EC50AF300436A85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				135586191EC50AF300436A85 /* AppDelegate.swift */,
 				1355861B1EC50AF300436A85 /* ViewController.swift */,
+				133A9B821ECA59DE009B7DB0 /* APIManager.swift */,
 				1355861D1EC50AF300436A85 /* Main.storyboard */,
 				135586201EC50AF300436A85 /* Assets.xcassets */,
 				135586221EC50AF300436A85 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				133A9B831ECA59DE009B7DB0 /* APIManager.swift in Sources */,
 				1355861C1EC50AF300436A85 /* ViewController.swift in Sources */,
 				1355861A1EC50AF300436A85 /* AppDelegate.swift in Sources */,
 			);
@@ -301,6 +305,7 @@
 				1355862A1EC50AF300436A85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

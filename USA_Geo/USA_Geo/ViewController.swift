@@ -13,8 +13,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        loadData()
     }
 
+    func loadData() {
+        let apiManager = APIManager.init()
+        apiManager.getAPIResponse()
+    }
+    
+    //MARK: Table Delegates
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -27,7 +34,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "myCell")
         cell.textLabel?.text = "hey"
         cell.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-//        let cell = UITableViewCell.init(style:UITableViewCellStyleDefault, reuseIdentifier: "myCell")
         
         return cell
     }
