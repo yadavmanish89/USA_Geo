@@ -10,6 +10,11 @@ import UIKit
 
 class APIManager: NSObject {
     func getCountries() {
-        
+        // http://services.groupkt.com/country/get/all
     }
+    
+    func getDetailForCountry(country:String) {
+        // http://services.groupkt.com/state/get/IND/all
+    }
+
 }
