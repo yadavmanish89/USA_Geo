@@ -1,4 +1,5 @@
 .DS_Store
-*.xcuserdata
+*/xcuserdata/*
+*/xcdebugger/*
 *.xcuserstate
 USA_Geo.xcodeproj/project.xcworkspace/xcuserdata/manish.xcuserdatad/UserInterfaceState.xcuserstate
