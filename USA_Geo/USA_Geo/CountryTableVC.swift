@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func loadData() {
         let apiManager = APIManager.init()
-        apiManager.getAPIResponse()
+        apiManager.getCountries()
     }
     
     //MARK: Table Delegates
@@ -33,7 +33,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "myCell")
         cell.textLabel?.text = "hey"
-        cell.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         
         return cell
     }

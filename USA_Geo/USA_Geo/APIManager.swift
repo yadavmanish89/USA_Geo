@@ -9,7 +9,7 @@
 import UIKit
 
 class APIManager: NSObject {
-    func getAPIResponse() {
+    func getCountries() {
         
     }
 }
