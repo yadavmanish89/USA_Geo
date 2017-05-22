@@ -18,7 +18,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func loadData() {
         let apiManager = APIManager.init()
-        apiManager.getCountries()
+        apiManager.getCountries { (response) in
+            if let resp = response{
+            print("Response:\(resp)")
+            }
+            else{
+                print("Error")
+            }
+        }
     }
     
     //MARK: Table Delegates
@@ -36,11 +43,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = URL.init(string:"APICon@#$%stants")
+            else{
+                print("Error")
+                return
+        }
+        print("URL is:\(url)")
+
+        print("DidSelect")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
