@@ -20,7 +20,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let apiManager = APIManager.init()
         apiManager.getCountries { (response) in
             if let resp = response{
-            print("Response:\(resp)")
+//                let restResponse = 
+            print("API Response:\(resp)")
             }
             else{
                 print("Error")
@@ -45,14 +46,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let url = URL.init(string:"APICon@#$%stants")
+        let apiManager = APIManager.init()
+        apiManager.getCountries { (response) in
+            if let resp = response{
+                print("Response:\(resp)")
+            }
             else{
                 print("Error")
-                return
+            }
         }
-        print("URL is:\(url)")
-
-        print("DidSelect")
+    }
+    
+    deinit {
+        print("hey")
     }
     
     override func didReceiveMemoryWarning() {
