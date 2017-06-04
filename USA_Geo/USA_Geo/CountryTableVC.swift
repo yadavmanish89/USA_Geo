@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    @IBOutlet var tableView: UITableView!
+    var dataArray = [CountryModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,8 +21,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func loadData() {
         let apiManager = APIManager.init()
         apiManager.getCountries { (response) in
+            if let respDict:NSDictionary = response as? NSDictionary{
+                self.parseData(respDict: respDict)
+            }
+
             if let resp = response{
-//                let restResponse = 
             print("API Response:\(resp)")
             }
             else{
@@ -29,19 +34,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func parseData(respDict:NSDictionary) {
+        let restResponse:NSDictionary? = respDict.object(forKey:"RestResponse") as? NSDictionary
+        if let resultArray:NSArray = restResponse?.object(forKey: "result") as? NSArray{
+            for obj in resultArray {
+                if let objDict:NSDictionary = obj as? NSDictionary{
+                    let country:CountryModel = CountryModel.init()
+                    country.parseObject(objDict: objDict)
+                    country.name = objDict.object(forKey: "name") as? String
+                    dataArray.append(country)
+                }
+            }
+        }
+        tableView.reloadData()
+    }
+    
     //MARK: Table Delegates
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "myCell")
-        cell.textLabel?.text = "hey"
-        
+        let country:CountryModel = dataArray[indexPath.row] 
+        cell.textLabel?.text = country.name
         return cell
     }
     

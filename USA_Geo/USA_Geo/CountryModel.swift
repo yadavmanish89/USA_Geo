@@ -11,4 +11,8 @@ import UIKit
 class CountryModel: NSObject {
     var name:String?
     var code:String?
+
+    func parseObject(objDict:NSDictionary?)  {
+        code = objDict?.object(forKey: "alpha3_code") as? String
+    }
 }

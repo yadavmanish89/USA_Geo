@@ -17,9 +17,7 @@ class APIManager: NSObject {
             print("Error")
             return
         }
-        let session = URLSession.shared
-
-        
+        let session = URLSession.shared        
         let task = session.dataTask(with: url) { (resData, resURL, resErr) in
             if let error = resErr{
                 print("Error :\(error.localizedDescription)")
