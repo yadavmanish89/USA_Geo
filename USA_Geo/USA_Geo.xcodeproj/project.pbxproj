@@ -10,6 +10,7 @@
 		133A9B831ECA59DE009B7DB0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A9B821ECA59DE009B7DB0 /* APIManager.swift */; };
 		133A9B851ECB8FC0009B7DB0 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A9B841ECB8FC0009B7DB0 /* CountryCell.swift */; };
 		134418461EE33F9000CFA989 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134418451EE33F9000CFA989 /* CountryModel.swift */; };
+		134963611F0ED7E4001B2ECA /* DummyData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 134963601F0ED075001B2ECA /* DummyData.geojson */; };
 		134C116C1ECF910100B41FFC /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C116B1ECF910100B41FFC /* APIConstant.swift */; };
 		1355861A1EC50AF300436A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135586191EC50AF300436A85 /* AppDelegate.swift */; };
 		1355861C1EC50AF300436A85 /* CountryTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1355861B1EC50AF300436A85 /* CountryTableVC.swift */; };
@@ -22,6 +23,7 @@
 		133A9B821ECA59DE009B7DB0 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		133A9B841ECB8FC0009B7DB0 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		134418451EE33F9000CFA989 /* CountryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		134963601F0ED075001B2ECA /* DummyData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = DummyData.geojson; sourceTree = "<group>"; };
 		134C116B1ECF910100B41FFC /* APIConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		135586161EC50AF300436A85 /* USA_Geo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USA_Geo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		135586191EC50AF300436A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				133A9B841ECB8FC0009B7DB0 /* CountryCell.swift */,
 				133A9B821ECA59DE009B7DB0 /* APIManager.swift */,
 				134C116B1ECF910100B41FFC /* APIConstant.swift */,
+				134963601F0ED075001B2ECA /* DummyData.geojson */,
 				1355861D1EC50AF300436A85 /* Main.storyboard */,
 				135586201EC50AF300436A85 /* Assets.xcassets */,
 				135586221EC50AF300436A85 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				135586241EC50AF300436A85 /* LaunchScreen.storyboard in Resources */,
 				135586211EC50AF300436A85 /* Assets.xcassets in Resources */,
+				134963611F0ED7E4001B2ECA /* DummyData.geojson in Resources */,
 				1355861F1EC50AF300436A85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

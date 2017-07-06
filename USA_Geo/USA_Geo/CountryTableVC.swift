@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loadData()
+//        readLocalJson()
     }
 
     func loadData() {
@@ -34,7 +35,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func readLocalJson()  {
+        
+        let filePath = Bundle.main.path(forResource: "DummyData", ofType: "geojson")
+        do {
+            let jsonData1 = try Data.init(contentsOf: URL.init(fileURLWithPath: filePath!))
+            let result = try JSONSerialization.jsonObject(with: jsonData1, options: JSONSerialization.ReadingOptions.allowFragments)
+            if let respDict:NSDictionary = result as? NSDictionary{
+                self.parseData(respDict: respDict)
+            }
+        } catch let erro {
+            print("Data error:\(erro.localizedDescription)")
+        }
+    }
+    
     func parseData(respDict:NSDictionary) {
+        
         let restResponse:NSDictionary? = respDict.object(forKey:"RestResponse") as? NSDictionary
         if let resultArray:NSArray = restResponse?.object(forKey: "result") as? NSArray{
             for obj in resultArray {
