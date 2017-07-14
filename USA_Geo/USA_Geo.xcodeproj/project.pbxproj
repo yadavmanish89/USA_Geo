@@ -17,6 +17,7 @@
 		1355861F1EC50AF300436A85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1355861D1EC50AF300436A85 /* Main.storyboard */; };
 		135586211EC50AF300436A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 135586201EC50AF300436A85 /* Assets.xcassets */; };
 		135586241EC50AF300436A85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135586221EC50AF300436A85 /* LaunchScreen.storyboard */; };
+		1356FE431F16A18900F83CE0 /* ErrorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356FE421F16A18900F83CE0 /* ErrorConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		135586201EC50AF300436A85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		135586231EC50AF300436A85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		135586251EC50AF300436A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1356FE421F16A18900F83CE0 /* ErrorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				133A9B841ECB8FC0009B7DB0 /* CountryCell.swift */,
 				133A9B821ECA59DE009B7DB0 /* APIManager.swift */,
 				134C116B1ECF910100B41FFC /* APIConstant.swift */,
+				1356FE421F16A18900F83CE0 /* ErrorConstants.swift */,
 				134963601F0ED075001B2ECA /* DummyData.geojson */,
 				1355861D1EC50AF300436A85 /* Main.storyboard */,
 				135586201EC50AF300436A85 /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 			files = (
 				133A9B831ECA59DE009B7DB0 /* APIManager.swift in Sources */,
 				133A9B851ECB8FC0009B7DB0 /* CountryCell.swift in Sources */,
+				1356FE431F16A18900F83CE0 /* ErrorConstants.swift in Sources */,
 				134418461EE33F9000CFA989 /* CountryModel.swift in Sources */,
 				1355861C1EC50AF300436A85 /* CountryTableVC.swift in Sources */,
 				134C116C1ECF910100B41FFC /* APIConstant.swift in Sources */,

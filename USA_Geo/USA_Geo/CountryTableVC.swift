@@ -15,8 +15,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        loadData()
+//        loadData()
 //        readLocalJson()
+        do{
+             try readJsonWithThrow()
+        }
+        catch{
+            
+        }
     }
 
     func loadData() {
@@ -35,6 +41,54 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func readJsonWithThrow() throws{
+        guard let filePath = Bundle.main.path(forResource: "DummyData", ofType: "geojson")else {
+            throw JsonError.FilePathNotFound
+        }
+        do{
+            let jsonData = try Data.init(contentsOf: URL.init(fileURLWithPath: filePath))
+            let result = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.allowFragments)
+            if let respDict:NSDictionary = result as? NSDictionary{
+                do{
+                    try parseJsonUsingGuard(response: respDict)
+                }
+                catch let err{
+                    switch err {
+                    case JsonError.DataNotFound:
+                        print("Data not found")
+                    case JsonError.ObjectNotArray:
+                        print("Not an Array")
+                    case JsonError.ObjectNotDictionary:
+                        print("Not an Dict")
+                    default:
+                        print("unknown problem")
+                    }
+                    print("Error while parsing:\(err)")
+                }
+            }
+        }
+        catch let err{
+            print("Error while serialization:\(err.localizedDescription)")
+        }
+    }
+    func parseJsonUsingGuard(response:NSDictionary) throws {
+        guard let restResponse = response.object(forKey:"RestResponse") as? NSDictionary else {
+            throw JsonError.ObjectNotDictionary
+        }
+        guard let resultArray = restResponse.object(forKey:"result") as? NSArray else {
+            throw JsonError.ObjectNotArray
+        }
+        for obj in resultArray {
+            if let objDict:NSDictionary = obj as? NSDictionary{
+                let country:CountryModel = CountryModel.init()
+                country.parseObject(objDict: objDict)
+                country.name = objDict.object(forKey: "name") as? String
+                dataArray.append(country)
+            }
+        }
+        tableView.reloadData()
+    }
+
     func readLocalJson()  {
         
         let filePath = Bundle.main.path(forResource: "DummyData", ofType: "geojson")
