@@ -18,6 +18,7 @@
 		135586211EC50AF300436A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 135586201EC50AF300436A85 /* Assets.xcassets */; };
 		135586241EC50AF300436A85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135586221EC50AF300436A85 /* LaunchScreen.storyboard */; };
 		1356FE431F16A18900F83CE0 /* ErrorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356FE421F16A18900F83CE0 /* ErrorConstants.swift */; };
+		1357BBF71F185D4F00565029 /* CountryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357BBF61F185D4F00565029 /* CountryDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		135586231EC50AF300436A85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		135586251EC50AF300436A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1356FE421F16A18900F83CE0 /* ErrorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorConstants.swift; sourceTree = "<group>"; };
+		1357BBF61F185D4F00565029 /* CountryDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				135586191EC50AF300436A85 /* AppDelegate.swift */,
 				1355861B1EC50AF300436A85 /* CountryTableVC.swift */,
+				1357BBF61F185D4F00565029 /* CountryDetailVC.swift */,
 				134418451EE33F9000CFA989 /* CountryModel.swift */,
 				133A9B841ECB8FC0009B7DB0 /* CountryCell.swift */,
 				133A9B821ECA59DE009B7DB0 /* APIManager.swift */,
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1357BBF71F185D4F00565029 /* CountryDetailVC.swift in Sources */,
 				133A9B831ECA59DE009B7DB0 /* APIManager.swift in Sources */,
 				133A9B851ECB8FC0009B7DB0 /* CountryCell.swift in Sources */,
 				1356FE431F16A18900F83CE0 /* ErrorConstants.swift in Sources */,

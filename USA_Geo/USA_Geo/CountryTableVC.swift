@@ -15,22 +15,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        loadData()
-//        readLocalJson()
+        loadData()
+/*       readLocalJson()
         do{
              try readJsonWithThrow()
         }
         catch{
             
         }
+        */
     }
 
     func loadData() {
         let apiManager = APIManager.init()
-        apiManager.getCountries { (response) in
+        apiManager.getCountries { [weak self](response) in
             if let respDict:NSDictionary = response as? NSDictionary{
-                self.parseData(respDict: respDict)
-            }
+//                self.parseData(respDict: respDict)
+                do{
+                    try self?.parseJsonUsingGuard(response: respDict)
+                }
+                catch let err{
+                    switch err {
+                    case JsonError.DataNotFound:
+                        print("Data not found")
+                    case JsonError.ObjectNotArray:
+                        print("Not an Array")
+                    case JsonError.ObjectNotDictionary:
+                        print("Not an Dict")
+                    default:
+                        print("unknown problem")
+                    }
+                    print("Error while parsing:\(err)")
+                }            }
 
             if let resp = response{
             print("API Response:\(resp)")
@@ -136,15 +152,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let apiManager = APIManager.init()
-        apiManager.getCountries { (response) in
-            if let resp = response{
-                print("Response:\(resp)")
-            }
-            else{
-                print("Error")
-            }
-        }
+        let stb = UIStoryboard.init(name: "Main", bundle: nil)
+        let detailVC = stb.instantiateViewController(withIdentifier: "countryDetailVC")
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     deinit {

@@ -1,10 +1,18 @@
 {
     "RestResponse" : {
         "messages" : ["Total [2] records found." ],
-        "result" :  {
+        "result" :  [{
                     "name" : "Åland Islands",
                     "alpha2_code" : "AX",
                     "alpha3_code" : "ALA"
-                    }
+                    },{
+                     "name" : "Argentina",
+                     "alpha2_code" : "AR",
+                     "alpha3_code" : "ARG"
+                     }, {
+                     "name" : "Armenia",
+                     "alpha2_code" : "AM",
+                     "alpha3_code" : "ARM"
+                     }]
     }
 }
