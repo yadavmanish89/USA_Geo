@@ -9,13 +9,24 @@
 import UIKit
 
 class CountryDetailVC: UIViewController {
-
+    var country:String?
+    var countryCode:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = self.country
         // Do any additional setup after loading the view.
+        loadData()
     }
 
+    func loadData() {
+        let apiManager = APIManager.init()
+        apiManager.getDetailForCountry(country: countryCode!) { (responseData) in
+            
+            print(responseData)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

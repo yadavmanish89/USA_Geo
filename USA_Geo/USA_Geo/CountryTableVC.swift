@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Counties"
         // Do any additional setup after loading the view, typically from a nib.
         loadData()
 /*       readLocalJson()
@@ -48,12 +49,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     print("Error while parsing:\(err)")
                 }            }
 
-            if let resp = response{
-            print("API Response:\(resp)")
-            }
-            else{
-                print("Error")
-            }
+//            if let resp = response{
+//            print("API Response:\(resp)")
+//            }
+//            else{
+//                print("Error")
+//            }
         }
     }
     
@@ -153,7 +154,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stb = UIStoryboard.init(name: "Main", bundle: nil)
-        let detailVC = stb.instantiateViewController(withIdentifier: "countryDetailVC")
+        guard let detailVC = stb.instantiateViewController(withIdentifier: "countryDetailVC") as? CountryDetailVC else{
+            return
+        }
+        let country:CountryModel = dataArray[indexPath.row]
+        detailVC.countryCode = country.code
+        detailVC.country = country.name
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
