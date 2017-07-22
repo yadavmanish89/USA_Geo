@@ -56,7 +56,7 @@ class APIManager: NSObject {
         }
     }
     
-    func getDetailForCountry(country:String,completion:@escaping (Any?)->Void) {
+    func getDetailForCountry(country:String,completion:@escaping (NSDictionary?)->Void) {
         // http://services.groupkt.com/state/get/IND/all
         let urlStr = BASE_URL+APIConstants.GET_CountryDetail+country+"/all"
         guard let url = URL.init(string: urlStr) else {
@@ -73,7 +73,7 @@ class APIManager: NSObject {
                 let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
                     if let responseDict = json as? NSDictionary{
                         DispatchQueue.main.async {
-                        completion(responseDict)
+                            completion(responseDict)
                         }
                     }
                 }
