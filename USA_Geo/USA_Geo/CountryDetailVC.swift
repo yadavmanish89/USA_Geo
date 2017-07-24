@@ -16,7 +16,7 @@ class CountryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = self.country
-        // Do any additional setup after loading the view.
+
         loadData()
     }
     func loadData() {
